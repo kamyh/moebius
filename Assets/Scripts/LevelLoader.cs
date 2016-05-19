@@ -7,10 +7,9 @@ using Assets.Scripts;
 
 public class LevelLoader : MonoBehaviour {
 
-    private Vector3 initThrashPos = new Vector3(6.6f, -5.25f, -3f);
+    private Vector3 initThrashPos = new Vector3(6.6f, -5.25f, -1.5f);
 	// Use this for initialization
 	void Start () {
-        Scenes.configs = new LevelConfiguration();
         if (Scenes.configs != null)
         {
             SetupGameArea();
@@ -28,15 +27,17 @@ public class LevelLoader : MonoBehaviour {
             selectedRecyclables.Add(recyclables[chosen]);
             recyclables.RemoveAt(chosen);
         }
-        Debug.Log(selectedRecyclables.ToString());
+        foreach (string a in selectedRecyclables)
+            Debug.Log(a);
         GameObject thrashBox = null;
         
         foreach(string selected in selectedRecyclables)
         {
             thrashBox = GameObject.FindGameObjectWithTag(TagsHelper.recyclableToThrash[selected]);
             thrashBox.transform.position = initThrashPos;
-            initThrashPos += Vector3.up * 2;
+            initThrashPos += Vector3.up * 3;
         }
+        Scenes.selectedRecyclables = selectedRecyclables;
     }
 
 }

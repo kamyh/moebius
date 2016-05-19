@@ -7,7 +7,7 @@ public class RotateGarbage : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        rotVector = new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 2f));
+        rotVector = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
     }
 	
 	// Update is called once per frame

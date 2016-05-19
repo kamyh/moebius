@@ -7,6 +7,7 @@ namespace Assets.ScenesManagement
     public static class Scenes
     {
         public static LevelConfiguration configs;
+        public static List<string> selectedRecyclables;
         public static void Load(string sceneName, LevelConfiguration configs = null)
         {
             if (configs == null) configs = new LevelConfiguration();

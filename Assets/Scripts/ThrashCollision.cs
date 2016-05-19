@@ -22,16 +22,17 @@ public class ThrashCollision : MonoBehaviour {
 
             if (collisionResultTag == tag)
             {
-                Debug.Log("SCORED RIGHT M8 !!");
+                ScoreManager.score += 200;
             }
             else
             {
-                Debug.Log("WRONG CONTAINER UHUHU");
+                ScoreManager.score -= 100;
             }
             Destroy(col.gameObject);
         } catch(KeyNotFoundException e)
         {
-            Debug.Log("You shouldn't have recycled this one dude !");
+            e.GetHashCode();
+            ScoreManager.score -= 200;
         }
         Destroy(col.gameObject);
     }

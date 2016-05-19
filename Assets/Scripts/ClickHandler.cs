@@ -4,7 +4,7 @@ using Assets.Scripts;
 
 public class ClickHandler : MonoBehaviour {
 
-    public float depth = -1.5f;
+    public float depth = -0f;
 
 	// Use this for initialization
 	void Start () {
@@ -29,7 +29,7 @@ public class ClickHandler : MonoBehaviour {
     void OnMouseDrag()
     {
         var mousePos = Input.mousePosition;
-        Vector3 boundary = Camera.main.WorldToScreenPoint(GameObject.FindGameObjectWithTag(TagsHelper.Wall).transform.position);
+        //Vector3 boundary = Camera.main.WorldToScreenPoint(GameObject.FindGameObjectWithTag(TagsHelper.Wall).transform.position);
         //Debug.Log(mousePos.x);
         //mousePos.x = Mathf.Clamp(mousePos.x, 0, boundary.x - 30);
         //Debug.Log(mousePos.x);

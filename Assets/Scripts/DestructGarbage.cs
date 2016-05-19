@@ -25,6 +25,7 @@ public class DestructGarbage : MonoBehaviour {
             rb.velocity = new Vector3(0f, 0f, 0f);
             collidingObject.transform.position = new Vector3(Random.Range(-5.5f, -7.5f), 8f, -3f);
             Destroy(collidingObject.GetComponent<RotateGarbage>());
+            ScoreManager.missed += 1;
         }
     }
 }
