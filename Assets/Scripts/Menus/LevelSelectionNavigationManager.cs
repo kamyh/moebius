@@ -10,29 +10,34 @@ public class LevelSelectionNavigationManager : MonoBehaviour {
 	// Use this for initialization
 	public void LoadEasyMode()
     {
-        SetGuiState(true);
+        SetGuiLoadingState(true);
         LevelConfiguration config = new LevelConfiguration();
         config.spawnInterval = 3f;
+        config.fallVelocity = -2f;
         Scenes.Load("MiniGame", config);
     }
 
     public void LoadAverageMode()
     {
-        SetGuiState(true);
+        SetGuiLoadingState(true);
         LevelConfiguration config = new LevelConfiguration();
         config.spawnInterval = 2f;
+        config.fallVelocity = -3f;
+        config.nbRecyclable = 3;
         Scenes.Load("MiniGame", config);
     }
 
     public void LoadHardMode()
     {
-        SetGuiState(true);
+        SetGuiLoadingState(true);
         LevelConfiguration config = new LevelConfiguration();
         config.spawnInterval = 1f;
+        config.fallVelocity = -4f;
+        config.nbRecyclable = 4;
         Scenes.Load("MiniGame", config);
     }
 
-    private void SetGuiState(bool loading)
+    private void SetGuiLoadingState(bool loading)
     {
         loadingText.enabled = !loading;
         foreach (Button b in GetComponents<Button>())

@@ -18,7 +18,8 @@ public class ClickHandler : MonoBehaviour {
 
     void OnMouseDown()
     {
-       SetAllCollidersStatus(false);
+        GetComponent<AudioSource>().Play();
+        SetAllCollidersStatus(false);
     }
 
     void OnMouseUp()

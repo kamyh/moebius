@@ -6,6 +6,7 @@ using Assets.Scripts;
 public class SpawnGarbage : MonoBehaviour {
 
     public ParticleSystem fallingParticles;
+    public GameObject clickHelper;
     public float tuningDifficultyFactor = 8000f;
 
     private List<GameObject> incinerablePool;
@@ -24,15 +25,20 @@ public class SpawnGarbage : MonoBehaviour {
         incinerablePool = new List<GameObject>();
         recyclablePool = new List<GameObject>();
 
-        var all = Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[];
-
-        foreach (GameObject go in all)
+        foreach (string tag in Scenes.selectedRecyclables)
         {
-            if (go.tag == TagsHelper.Incinerables)
-                incinerablePool.Add(go);
-            if (Scenes.selectedRecyclables.Contains(go.tag))
-                recyclablePool.Add(go);
+            GameObject[] recyclables = GameObject.FindGameObjectsWithTag(tag);
+            if (recyclables.Length > 0)
+            {
+                recyclablePool.AddRange(new List<GameObject>(recyclables));
+            }
         }
+        GameObject[] incinerables = GameObject.FindGameObjectsWithTag(TagsHelper.Incinerables);
+        if (incinerables.Length > 0)
+        {
+            incinerablePool.AddRange(new List<GameObject>(incinerables));
+        }
+
         Invoke("PopGarbage", 1);
     }
 
@@ -42,6 +48,10 @@ public class SpawnGarbage : MonoBehaviour {
         go.GetComponent<Rigidbody>().useGravity = false;
         go.AddComponent<RotateGarbage>();
         go.AddComponent<ClickHandler>();
+        AudioSource aSource = go.AddComponent<AudioSource>();
+        aSource.clip = Resources.Load("grab") as AudioClip;
+        GameObject helper = Instantiate(clickHelper, go.transform.position, Quaternion.identity) as GameObject;
+        helper.transform.parent = go.transform;
     }
 
     // Update is called once per frame
@@ -69,7 +79,6 @@ public class SpawnGarbage : MonoBehaviour {
         //FollowGarbage fg = pSystem.GetComponent<FollowGarbage>() as FollowGarbage;
         //fg.garbage = garbage;
         int tmpScore = ScoreManager.score >= 0 ? ScoreManager.score : 0;
-        Debug.Log(fallVelocity - (((float)tmpScore) / tuningDifficultyFactor));
         garbage.GetComponent<Rigidbody>().velocity = new Vector3(0f, fallVelocity - (((float)tmpScore) / tuningDifficultyFactor), 0f);
         Invoke("PopGarbage", spawnInterval / ((tmpScore / tuningDifficultyFactor) + 1f));
     }

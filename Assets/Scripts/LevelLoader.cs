@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
-using System.Collections;
 using Assets.ScenesManagement;
-using System;
 using System.Collections.Generic;
 using Assets.Scripts;
 
 public class LevelLoader : MonoBehaviour {
 
-    private Vector3 initThrashPos = new Vector3(6.6f, -5.25f, -1.5f);
+    public Canvas pauseMenu;
+    public Canvas gameOverCanvas;
+
+    private Vector3 initThrashPos = new Vector3(6.8f, -5.0f, -1.5f);
 	// Use this for initialization
 	void Start () {
+        pauseMenu.enabled = false;
+        gameOverCanvas.enabled = false;
         if (Scenes.configs != null)
         {
             SetupGameArea();
@@ -27,15 +30,14 @@ public class LevelLoader : MonoBehaviour {
             selectedRecyclables.Add(recyclables[chosen]);
             recyclables.RemoveAt(chosen);
         }
-        foreach (string a in selectedRecyclables)
-            Debug.Log(a);
+
         GameObject thrashBox = null;
         
         foreach(string selected in selectedRecyclables)
         {
             thrashBox = GameObject.FindGameObjectWithTag(TagsHelper.recyclableToThrash[selected]);
             thrashBox.transform.position = initThrashPos;
-            initThrashPos += Vector3.up * 3;
+            initThrashPos += Vector3.up * 2.8f;
         }
         Scenes.selectedRecyclables = selectedRecyclables;
     }

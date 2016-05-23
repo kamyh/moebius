@@ -12,6 +12,6 @@ namespace Assets.ScenesManagement
         public float spawnInterval = 2f;
         public float fallVelocity = -2f;
         public int nbRecyclable = 2;
-        public float gaugeLevel = 1f;
+        public int maxMissed = 10;
     }
 }

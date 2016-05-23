@@ -2,16 +2,25 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using Assets.ScenesManagement;
 
 public class ScoreManager : MonoBehaviour {
 
     public static int score = 0;
     public static int missed = 0;
 
-    public int maxMissed = 15;
+    private int maxMissed = 15;
 
     public Text scoreText;
     public Text missedText;
+
+    void Start()
+    {
+        if(Scenes.configs != null)
+        {
+            maxMissed = Scenes.configs.maxMissed;
+        }
+    }
 
 	// Use this for initialization
 	void Awake () {
@@ -20,8 +29,8 @@ public class ScoreManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        scoreText.text = "Score " + score;
-        missedText.text = "Missed " + missed;
+        scoreText.text = "Score: " + score;
+        missedText.text = "Missed: " + missed;
         MissedColorUpdate();
 	}
 
