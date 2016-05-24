@@ -1,0 +1,214 @@
+fileFormatVersion: 2
+guid: 0a9462e9a9343bc4c88df7eb39b6a3b2
+timeCreated: 1463998794
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Blown_Reflector
+    100002: //RootNode
+    100004: Cloner
+    100006: Cube
+    100008: Decorator
+    100010: Double_Reflctor
+    100012: Hexagonal_Candle
+    100014: Krypton
+    100016: Light
+    100018: Light_1
+    100020: Light_2
+    100022: Ogive
+    100024: Pear_1
+    100026: Pear_Straight
+    100028: Plane
+    100030: Plane_0
+    100032: Plane_1
+    100034: Plane_2
+    100036: Plane_3
+    100038: Plane_4
+    100040: Plane_5
+    100042: Plane_6
+    100044: Plane_7
+    100046: Plane_8
+    100048: Sealed_Beam
+    100050: Sphere
+    100052: Sphere_1
+    100054: Staight_Tubular
+    100056: Straight_Sided
+    100058: T
+    100060: TA_1
+    100062: Tubular
+    400000: Blown_Reflector
+    400002: //RootNode
+    400004: Cloner
+    400006: Cube
+    400008: Decorator
+    400010: Double_Reflctor
+    400012: Hexagonal_Candle
+    400014: Krypton
+    400016: Light
+    400018: Light_1
+    400020: Light_2
+    400022: Ogive
+    400024: Pear_1
+    400026: Pear_Straight
+    400028: Plane
+    400030: Plane_0
+    400032: Plane_1
+    400034: Plane_2
+    400036: Plane_3
+    400038: Plane_4
+    400040: Plane_5
+    400042: Plane_6
+    400044: Plane_7
+    400046: Plane_8
+    400048: Sealed_Beam
+    400050: Sphere
+    400052: Sphere_1
+    400054: Staight_Tubular
+    400056: Straight_Sided
+    400058: T
+    400060: TA_1
+    400062: Tubular
+    2300000: Blown_Reflector
+    2300002: Cube
+    2300004: Decorator
+    2300006: Double_Reflctor
+    2300008: Hexagonal_Candle
+    2300010: Krypton
+    2300012: Ogive
+    2300014: Pear_1
+    2300016: Pear_Straight
+    2300018: Plane_0
+    2300020: Plane_1
+    2300022: Plane_2
+    2300024: Plane_3
+    2300026: Plane_4
+    2300028: Plane_5
+    2300030: Plane_6
+    2300032: Plane_7
+    2300034: Plane_8
+    2300036: Sealed_Beam
+    2300038: Sphere
+    2300040: Sphere_1
+    2300042: Staight_Tubular
+    2300044: Straight_Sided
+    2300046: T
+    2300048: TA_1
+    2300050: Tubular
+    3300000: Blown_Reflector
+    3300002: Cube
+    3300004: Decorator
+    3300006: Double_Reflctor
+    3300008: Hexagonal_Candle
+    3300010: Krypton
+    3300012: Ogive
+    3300014: Pear_1
+    3300016: Pear_Straight
+    3300018: Plane_0
+    3300020: Plane_1
+    3300022: Plane_2
+    3300024: Plane_3
+    3300026: Plane_4
+    3300028: Plane_5
+    3300030: Plane_6
+    3300032: Plane_7
+    3300034: Plane_8
+    3300036: Sealed_Beam
+    3300038: Sphere
+    3300040: Sphere_1
+    3300042: Staight_Tubular
+    3300044: Straight_Sided
+    3300046: T
+    3300048: TA_1
+    3300050: Tubular
+    4300000: Cube
+    4300002: Sphere_1
+    4300004: Sphere
+    4300006: Plane_0
+    4300008: Plane_1
+    4300010: Plane_2
+    4300012: Plane_3
+    4300014: Plane_4
+    4300016: Plane_5
+    4300018: Plane_6
+    4300020: Plane_7
+    4300022: Plane_8
+    4300024: Sealed_Beam
+    4300026: Pear_Straight
+    4300028: Ogive
+    4300030: Hexagonal_Candle
+    4300032: Pear_1
+    4300034: Krypton
+    4300036: Decorator
+    4300038: Blown_Reflector
+    4300040: Double_Reflctor
+    4300042: Straight_Sided
+    4300044: Staight_Tubular
+    4300046: Tubular
+    4300048: T
+    4300050: TA_1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
