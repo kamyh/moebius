@@ -7,23 +7,30 @@ public class StartMenuNavigationManager : MonoBehaviour {
 
     public Text loadingText;
 
-	// Use this for initialization
-	public void LoadSelectionScene()
+    private Scenes loader;
+
+    void Start()
+    {
+        loader = gameObject.AddComponent<Scenes>();
+    }
+
+    // Use this for initialization
+    public void LoadSelectionScene()
     {
         SetGuiState(true);
-        Scenes.Load("LevelSelection");
+        loader.Load("LevelSelection");
     }
 
     public void LoadCreditsScene()
     {
         SetGuiState(true);
-        Scenes.Load("Credits");
+        loader.Load("Credits");
     }
 
     public void LoadHelpScene()
     {
         SetGuiState(true);
-        Scenes.Load("Help");
+        loader.Load("Help");
     }
 
     private void SetGuiState(bool loading)

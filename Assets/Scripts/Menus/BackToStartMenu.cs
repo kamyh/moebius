@@ -5,6 +5,12 @@ using Assets.ScenesManagement;
 
 public class BackToStartMenu : MonoBehaviour {
 
+    private Scenes loader;
+
+    void Start()
+    {
+        loader = gameObject.AddComponent<Scenes>();
+    }
 
 	// Use this for initialization
 	public void Back()
@@ -12,6 +18,6 @@ public class BackToStartMenu : MonoBehaviour {
         ScoreManager.missed = 0;
         ScoreManager.score = 0;
         Time.timeScale = 1f;
-        Scenes.Load("StartMenu");
+        loader.Load("StartMenu");
     }
 }

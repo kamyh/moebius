@@ -7,14 +7,21 @@ public class LevelSelectionNavigationManager : MonoBehaviour {
 
     public Text loadingText;
 
-	// Use this for initialization
-	public void LoadEasyMode()
+    private Scenes loader;
+
+    void Start()
+    {
+        loader = gameObject.AddComponent<Scenes>();
+    }
+
+    // Use this for initialization
+    public void LoadEasyMode()
     {
         SetGuiLoadingState(true);
         LevelConfiguration config = new LevelConfiguration();
         config.spawnInterval = 3f;
         config.fallVelocity = -2f;
-        Scenes.Load("MiniGame", config);
+        loader.Load("MiniGame", config);
     }
 
     public void LoadAverageMode()
@@ -24,7 +31,7 @@ public class LevelSelectionNavigationManager : MonoBehaviour {
         config.spawnInterval = 2f;
         config.fallVelocity = -3f;
         config.nbRecyclable = 3;
-        Scenes.Load("MiniGame", config);
+        loader.Load("MiniGame", config);
     }
 
     public void LoadHardMode()
@@ -34,7 +41,7 @@ public class LevelSelectionNavigationManager : MonoBehaviour {
         config.spawnInterval = 1f;
         config.fallVelocity = -4f;
         config.nbRecyclable = 4;
-        Scenes.Load("MiniGame", config);
+        loader.Load("MiniGame", config);
     }
 
     private void SetGuiLoadingState(bool loading)
@@ -43,4 +50,5 @@ public class LevelSelectionNavigationManager : MonoBehaviour {
         foreach (Button b in GetComponents<Button>())
             b.enabled = !loading;
     }
+
 }

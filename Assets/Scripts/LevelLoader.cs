@@ -32,7 +32,7 @@ public class LevelLoader : MonoBehaviour {
         }
 
         GameObject thrashBox = null;
-        
+        initThrashPos += Vector3.up * ((4f - (float)selectedRecyclables.Count)/2f) * 2.8f;
         foreach(string selected in selectedRecyclables)
         {
             thrashBox = GameObject.FindGameObjectWithTag(TagsHelper.recyclableToThrash[selected]);

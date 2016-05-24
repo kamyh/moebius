@@ -9,9 +9,11 @@ public class GameOver : MonoBehaviour {
     public Text scoreText;
 
     private AudioSource gameOverSound;
+    private Texture2D standardCursor;
 
     void Start()
     {
+        standardCursor = Resources.Load("standardCursor") as Texture2D;
         gameOverSound = gameObject.AddComponent<AudioSource>();
         gameOverSound.clip = Resources.Load("gameOver") as AudioClip;
     }
@@ -24,14 +26,18 @@ public class GameOver : MonoBehaviour {
 
     public void HandleGameOver()
     {
+        Cursor.SetCursor(standardCursor, Vector2.zero, CursorMode.ForceSoftware);
         gameOverCanvas.enabled = true;
         scoreText.text = "You scored " + ScoreManager.score + "points !";
         gameOverSound.Play();
-        Invoke("StopGame", 0.3f);
+        Invoke("StopGame", 0.5f);
     }
 
     private void StopGame()
     {
+        TextMesh[] meshes = GameObject.FindObjectsOfType<TextMesh>();
+        foreach (TextMesh m in meshes)
+            Destroy(m);
         Time.timeScale = 0f;
     }
 }

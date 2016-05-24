@@ -6,24 +6,39 @@ public class ClickHandler : MonoBehaviour {
 
     public float depth = -0f;
 
+    private Texture2D standardCursor;
+    private Texture2D hoverCursor;
+    private Texture2D dragCursor;
+    private Vector2 dragAndHoverOffset;
+
 	// Use this for initialization
 	void Start () {
-	
-	}
+        dragAndHoverOffset = new Vector2(13, 0);
+        standardCursor = Resources.Load("standardCursor") as Texture2D;
+        hoverCursor = Resources.Load("hoverCursor") as Texture2D;
+        dragCursor = Resources.Load("dragCursor") as Texture2D;
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
     }
 
+    void OnMouseEnter()
+    {
+        Cursor.SetCursor(hoverCursor, dragAndHoverOffset, CursorMode.ForceSoftware);
+    }
+
     void OnMouseDown()
     {
+        Cursor.SetCursor(dragCursor, dragAndHoverOffset, CursorMode.ForceSoftware);
         GetComponent<AudioSource>().Play();
         SetAllCollidersStatus(false);
     }
 
     void OnMouseUp()
     {
+        Cursor.SetCursor(hoverCursor, dragAndHoverOffset, CursorMode.ForceSoftware);
         SetAllCollidersStatus(true); 
     }
 
@@ -38,6 +53,16 @@ public class ClickHandler : MonoBehaviour {
         var wantedPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 0f));
         wantedPos.z = depth;
         GetComponent<Rigidbody>().MovePosition(wantedPos);
+    }
+
+    void OnMouseExit()
+    {
+        Cursor.SetCursor(standardCursor, Vector2.zero, CursorMode.ForceSoftware);
+    }
+
+    void OnDestroy()
+    {
+        Cursor.SetCursor(standardCursor, Vector2.zero, CursorMode.ForceSoftware);
     }
 
 
