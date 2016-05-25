@@ -20,7 +20,7 @@ public class FireSpawner : MonoBehaviour {
         for (float x = xStart; x < xStop; x += step)
         {
             ParticleSystem spawn = Instantiate(fire, new Vector3(x, yOffset, zOffset), Quaternion.identity) as ParticleSystem;
-            spawn.startDelay = Random.Range(0.0f, 0.7f);
+            spawn.startDelay = Random.Range(0.0f, 0.9f);
         }
     }
 	

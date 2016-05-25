@@ -13,10 +13,9 @@ public class LevelLoader : MonoBehaviour {
 	void Start () {
         pauseMenu.enabled = false;
         gameOverCanvas.enabled = false;
-        if (Scenes.configs != null)
-        {
-            SetupGameArea();
-        }
+        if (Scenes.configs == null)
+            Scenes.configs = new LevelConfiguration();
+        SetupGameArea();
     }
 
     private void SetupGameArea()

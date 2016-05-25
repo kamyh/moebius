@@ -36,6 +36,7 @@ public class ScoreManager : MonoBehaviour {
 
     private void MissedColorUpdate()
     {
+        Debug.Log(maxMissed);
         float step = 1f / (float)maxMissed;
         missedText.color = Color.Lerp(missedText.color, getColor(1f - (step * missed)), Time.deltaTime);
     }
