@@ -45,7 +45,6 @@ public class DestructGarbage : MonoBehaviour {
     private void SpawnFireAnimation(Vector3 position, bool isIncinerable)
     {
         ParticleSystem ps;
-        Debug.Log(transform.position.y);
         position.Set(position.x, transform.position.y + 2f, position.z);
         if(isIncinerable)
             ps = Instantiate(greenFire, position, Quaternion.identity) as ParticleSystem;

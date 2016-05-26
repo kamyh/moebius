@@ -28,16 +28,13 @@ public class GameOver : MonoBehaviour {
     {
         Cursor.SetCursor(standardCursor, Vector2.zero, CursorMode.ForceSoftware);
         gameOverCanvas.enabled = true;
-        scoreText.text = "You scored " + ScoreManager.score + "points !";
+        scoreText.text = "You scored " + ScoreManager.score + " points !";
         gameOverSound.Play();
         Invoke("StopGame", 0.5f);
     }
 
     private void StopGame()
     {
-        TextMesh[] meshes = GameObject.FindObjectsOfType<TextMesh>();
-        foreach (TextMesh m in meshes)
-            Destroy(m);
         Time.timeScale = 0f;
     }
 }

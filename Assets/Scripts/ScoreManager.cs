@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour {
     public static int score = 0;
     public static int missed = 0;
 
-    private int maxMissed = 15;
+    private int maxMissed = 10;
 
     public Text scoreText;
     public Text missedText;
