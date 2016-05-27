@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class DestructGarbage : MonoBehaviour {
 
@@ -33,12 +34,14 @@ public class DestructGarbage : MonoBehaviour {
             SpawnFireAnimation(col.gameObject.transform.position, false);
             Rigidbody rb = collidingObject.GetComponent<Rigidbody>();
             rb.useGravity = true;
-            rb.velocity = new Vector3(0f, 0f, 0f);
-            collidingObject.transform.position = new Vector3(Random.Range(-5.5f, -7.5f), 8f, -3f);
+            rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+            collidingObject.transform.position = new Vector3(UnityEngine.Random.Range(-5.5f, -7.5f), 8f, -3f);
             Destroy(collidingObject.GetComponent<RotateGarbage>());
             Destroy(collidingObject.GetComponent<ClickHandler>());
+            Destroy(collidingObject.GetComponentInChildren<SphereCollider>()); //delete click collider
             ScoreManager.missed += 1;
             badFireSound.Play();
+            collidingObject.layer = 0;
         }
     }
 

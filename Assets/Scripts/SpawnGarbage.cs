@@ -44,8 +44,8 @@ public class SpawnGarbage : MonoBehaviour {
 
     private void SetupGameObject(GameObject go)
     {
-        go.AddComponent<Rigidbody>();
-        go.GetComponent<Rigidbody>().useGravity = false;
+        Rigidbody rb = go.AddComponent<Rigidbody>();
+        rb.useGravity = false;
         go.AddComponent<RotateGarbage>();
         go.AddComponent<ClickHandler>();
         AudioSource aSource = go.AddComponent<AudioSource>();
@@ -53,11 +53,6 @@ public class SpawnGarbage : MonoBehaviour {
         GameObject helper = Instantiate(clickHelper, go.transform.position, Quaternion.identity) as GameObject;
         helper.transform.parent = go.transform;
     }
-
-    // Update is called once per frame
-    void Update () {
-	    
-	}
 
     void PopGarbage()
     {

@@ -10,12 +10,14 @@ public class GameOver : MonoBehaviour {
 
     private AudioSource gameOverSound;
     private Texture2D standardCursor;
+    private Scenes loader;
 
     void Start()
     {
         standardCursor = Resources.Load("standardCursor") as Texture2D;
         gameOverSound = gameObject.AddComponent<AudioSource>();
         gameOverSound.clip = Resources.Load("gameOver") as AudioClip;
+        loader = gameObject.AddComponent<Scenes>();
     }
 	
 	// Update is called once per frame
@@ -30,7 +32,7 @@ public class GameOver : MonoBehaviour {
         gameOverCanvas.enabled = true;
         scoreText.text = "You scored " + ScoreManager.score + " points !";
         gameOverSound.Play();
-        Invoke("StopGame", 0.5f);
+        Invoke("StopGame", 0.8f);
     }
 
     private void StopGame()

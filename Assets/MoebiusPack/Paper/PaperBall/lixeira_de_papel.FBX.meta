@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 8949379ced7ea1e46a56f67da1e4aab0
+timeCreated: 1464335702
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: lixeira
+    100002: //RootNode
+    100004: papel00
+    100006: papel01
+    100008: papel02
+    100010: papel03
+    100012: papel04
+    100014: papel05
+    100016: papel06
+    100018: papel07
+    100020: papel08
+    100022: papel09
+    100024: papel10
+    100026: papel11
+    100028: papel12
+    100030: papel13
+    100032: papel14
+    100034: papel15
+    100036: papel16
+    100038: papel17
+    100040: papel18
+    100042: papel19
+    100044: papel20
+    100046: papel21
+    100048: papel22
+    100050: papel23
+    400000: lixeira
+    400002: //RootNode
+    400004: papel00
+    400006: papel01
+    400008: papel02
+    400010: papel03
+    400012: papel04
+    400014: papel05
+    400016: papel06
+    400018: papel07
+    400020: papel08
+    400022: papel09
+    400024: papel10
+    400026: papel11
+    400028: papel12
+    400030: papel13
+    400032: papel14
+    400034: papel15
+    400036: papel16
+    400038: papel17
+    400040: papel18
+    400042: papel19
+    400044: papel20
+    400046: papel21
+    400048: papel22
+    400050: papel23
+    2300000: lixeira
+    2300002: papel00
+    2300004: papel01
+    2300006: papel02
+    2300008: papel03
+    2300010: papel04
+    2300012: papel05
+    2300014: papel06
+    2300016: papel07
+    2300018: papel08
+    2300020: papel09
+    2300022: papel10
+    2300024: papel11
+    2300026: papel12
+    2300028: papel13
+    2300030: papel14
+    2300032: papel15
+    2300034: papel16
+    2300036: papel17
+    2300038: papel18
+    2300040: papel19
+    2300042: papel20
+    2300044: papel21
+    2300046: papel22
+    2300048: papel23
+    3300000: lixeira
+    3300002: papel00
+    3300004: papel01
+    3300006: papel02
+    3300008: papel03
+    3300010: papel04
+    3300012: papel05
+    3300014: papel06
+    3300016: papel07
+    3300018: papel08
+    3300020: papel09
+    3300022: papel10
+    3300024: papel11
+    3300026: papel12
+    3300028: papel13
+    3300030: papel14
+    3300032: papel15
+    3300034: papel16
+    3300036: papel17
+    3300038: papel18
+    3300040: papel19
+    3300042: papel20
+    3300044: papel21
+    3300046: papel22
+    3300048: papel23
+    4300000: papel00
+    4300002: papel01
+    4300004: papel02
+    4300006: papel03
+    4300008: papel04
+    4300010: papel05
+    4300012: papel06
+    4300014: papel07
+    4300016: papel08
+    4300018: papel09
+    4300020: papel10
+    4300022: papel11
+    4300024: papel12
+    4300026: papel13
+    4300028: papel14
+    4300030: papel15
+    4300032: papel16
+    4300034: papel17
+    4300036: papel18
+    4300038: papel19
+    4300040: papel20
+    4300042: papel21
+    4300044: papel22
+    4300046: papel23
+    4300048: lixeira
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
