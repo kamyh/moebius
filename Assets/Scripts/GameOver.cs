@@ -10,14 +10,12 @@ public class GameOver : MonoBehaviour {
 
     private AudioSource gameOverSound;
     private Texture2D standardCursor;
-    private Scenes loader;
 
     void Start()
     {
         standardCursor = Resources.Load("standardCursor") as Texture2D;
         gameOverSound = gameObject.AddComponent<AudioSource>();
         gameOverSound.clip = Resources.Load("gameOver") as AudioClip;
-        loader = gameObject.AddComponent<Scenes>();
     }
 	
 	// Update is called once per frame

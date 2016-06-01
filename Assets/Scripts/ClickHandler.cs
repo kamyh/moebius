@@ -53,6 +53,7 @@ public class ClickHandler : MonoBehaviour {
         var wantedPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 0f));
         wantedPos.z = depth;
         GetComponent<Rigidbody>().MovePosition(wantedPos);
+        Cursor.SetCursor(dragCursor, dragAndHoverOffset, CursorMode.ForceSoftware);
     }
 
     void OnMouseExit()
@@ -69,6 +70,11 @@ public class ClickHandler : MonoBehaviour {
     public void SetAllCollidersStatus(bool active)
     {
         foreach (Collider c in GetComponents<Collider>())
+        {
+            c.enabled = active;
+        }
+
+        foreach (Collider c in GetComponentsInChildren<Collider>())
         {
             c.enabled = active;
         }

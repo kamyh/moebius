@@ -36,8 +36,7 @@ public class ThrashCollision : MonoBehaviour {
     void OnCollisionEnter(Collision col)
     {
         GameObject scorePopup = Instantiate(upDownScoreText, col.gameObject.transform.position, upDownScoreText.transform.rotation) as GameObject;
-        scorePopup.AddComponent<AnimateScoreChange>();
-        AnimateScoreChange animation = scorePopup.GetComponent<AnimateScoreChange>();
+        AnimateScoreChange animation = scorePopup.AddComponent<AnimateScoreChange>();
         int score = 0;
         try {
             string collisionResultTag = TagsHelper.recyclableToThrash[col.gameObject.tag];
@@ -45,24 +44,26 @@ public class ThrashCollision : MonoBehaviour {
             if (collisionResultTag == tag)
             {
                 animation.SetColor(scoreUpColor);
-                score = 200;
                 fineSound.Play();
+                ScoreManager.nbConsecutives++;
+                score = ScoreManager.ScoreUpComboMultiplier();
             }
             else
             {
                 animation.SetColor(scoreDownColor);
-                score = -100;
                 wrongSound.Play();
+                ScoreManager.nbConsecutives = 0;
+                score = ScoreManager.HalfScoreDown();
             }
             Destroy(col.gameObject);
         } catch(KeyNotFoundException e)
         {
             e.GetHashCode();
             animation.SetColor(scoreDownColor);
-            score = -200;
             badSound.Play();
+            ScoreManager.nbConsecutives = 0;
+            score = ScoreManager.ScoreDown();
         }
-        ScoreManager.score += score;
         animation.SetText(score.ToString("+00;-00;+00"));
         trashClosingSound.Play();
         Destroy(col.gameObject);

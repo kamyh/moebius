@@ -7,6 +7,10 @@ public class DestructGarbage : MonoBehaviour {
     public ParticleSystem greenFire;
     public ParticleSystem redFire;
 
+    public GameObject upDownScoreText;
+    public Color scoreUpColor = Color.green;
+    public Color scoreDownColor = Color.red;
+
     private AudioSource fineFireSound;
     private AudioSource badFireSound;
 
@@ -23,14 +27,26 @@ public class DestructGarbage : MonoBehaviour {
     void OnCollisionEnter(Collision col)
     {
         GameObject collidingObject = col.gameObject;
+        GameObject scorePopup = Instantiate(upDownScoreText, collidingObject.transform.position, upDownScoreText.transform.rotation) as GameObject;
+        scorePopup.transform.position += Vector3.up;
+        AnimateScoreChange animation = scorePopup.AddComponent<AnimateScoreChange>();
+        int score = 0;
         if (collidingObject.tag == "Incinerable")
         {
+            animation.SetColor(scoreUpColor);
             SpawnFireAnimation(col.gameObject.transform.position, true);
             Destroy(col.gameObject);
             fineFireSound.Play();
+            score = ScoreManager.ScoreUp();
+        }
+        else if(collidingObject.tag == "Bonus")
+        {
+            Destroy(collidingObject);
+            animation.GetComponent<Renderer>().enabled = false;
         }
         else
         {
+            animation.SetColor(scoreDownColor);
             SpawnFireAnimation(col.gameObject.transform.position, false);
             Rigidbody rb = collidingObject.GetComponent<Rigidbody>();
             rb.useGravity = true;
@@ -40,9 +56,13 @@ public class DestructGarbage : MonoBehaviour {
             Destroy(collidingObject.GetComponent<ClickHandler>());
             Destroy(collidingObject.GetComponentInChildren<SphereCollider>()); //delete click collider
             ScoreManager.missed += 1;
+            ScoreManager.nbConsecutives = 0;
+            score = ScoreManager.ScoreDown();
             badFireSound.Play();
             collidingObject.layer = 0;
         }
+
+        animation.SetText(score.ToString("+00;-00;+00"));
     }
 
     private void SpawnFireAnimation(Vector3 position, bool isIncinerable)

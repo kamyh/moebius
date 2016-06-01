@@ -6,13 +6,18 @@ using Assets.ScenesManagement;
 
 public class ScoreManager : MonoBehaviour {
 
+    public static int baseScore = 100;
     public static int score = 0;
     public static int missed = 0;
+    public static int comboMultiplier = 1;
+    public static int nbConsecutives = 0;
 
     private int maxMissed = 10;
 
+
     public Text scoreText;
     public Text missedText;
+    public Text comboText;
 
     void Start()
     {
@@ -29,8 +34,10 @@ public class ScoreManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        UpdateComboMultiplier();
         scoreText.text = "Score: " + score;
-        missedText.text = "Missed: " + missed;
+        missedText.text = "Missed: " + missed + "/" + Scenes.configs.maxMissed;
+        comboText.text = "Combo: x " + comboMultiplier;
         MissedColorUpdate();
 	}
 
@@ -47,5 +54,38 @@ public class ScoreManager : MonoBehaviour {
         float V = 1f; // Brightness
 
         return Color.HSVToRGB(H, S, V);
+    }
+
+    public static int ScoreUpComboMultiplier()
+    {
+        int scored = baseScore * comboMultiplier;
+        score += scored;
+        return scored;
+    }
+
+    public static int ScoreUp()
+    {
+        int scored = baseScore;
+        score += scored;
+        return scored;
+    }
+
+    public static int ScoreDown()
+    {
+        int scored = -baseScore * comboMultiplier;
+        score += scored;
+        return scored;
+    }
+
+    public static int HalfScoreDown()
+    {
+        int scored = -(baseScore / 2) * comboMultiplier;
+        score += scored;
+        return scored;
+    }
+
+    private void UpdateComboMultiplier()
+    {
+        comboMultiplier = nbConsecutives / 10 + 1;
     }
 }
