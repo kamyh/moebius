@@ -25,7 +25,7 @@ public class LevelLoader : MonoBehaviour {
         int chosen = 0;
         for(int i = 0; i < Scenes.configs.nbRecyclable; i++)
         {
-            chosen = UnityEngine.Random.Range(0, recyclables.Count - 1);
+            chosen = Random.Range(0, recyclables.Count);
             selectedRecyclables.Add(recyclables[chosen]);
             recyclables.RemoveAt(chosen);
         }
@@ -35,6 +35,7 @@ public class LevelLoader : MonoBehaviour {
         foreach(string selected in selectedRecyclables)
         {
             thrashBox = GameObject.FindGameObjectWithTag(TagsHelper.recyclableToThrash[selected]);
+            Debug.Log(TagsHelper.recyclableToThrash[selected] + "   " + selected);
             thrashBox.transform.position = initThrashPos;
             initThrashPos += Vector3.up * 2.8f;
         }

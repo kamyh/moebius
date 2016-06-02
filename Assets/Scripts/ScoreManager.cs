@@ -6,6 +6,7 @@ using Assets.ScenesManagement;
 
 public class ScoreManager : MonoBehaviour {
 
+    public Camera mainCamera;
     public static int baseScore = 100;
     public static int score = 0;
     public static int missed = 0;
@@ -13,7 +14,8 @@ public class ScoreManager : MonoBehaviour {
     public static int nbConsecutives = 0;
 
     private int maxMissed = 10;
-
+    private int previousComboMul = 1;
+    private AudioSource comboSound;
 
     public Text scoreText;
     public Text missedText;
@@ -25,6 +27,10 @@ public class ScoreManager : MonoBehaviour {
         {
             maxMissed = Scenes.configs.maxMissed;
         }
+        previousComboMul = comboMultiplier;
+
+        comboSound = gameObject.AddComponent<AudioSource>();
+        comboSound.clip = Resources.Load("combo") as AudioClip;
     }
 
 	// Use this for initialization
@@ -87,5 +93,11 @@ public class ScoreManager : MonoBehaviour {
     private void UpdateComboMultiplier()
     {
         comboMultiplier = nbConsecutives / 10 + 1;
+        if (previousComboMul < comboMultiplier)
+        {
+            mainCamera.GetComponent<CameraShaker>().DoShake();
+            comboSound.Play();
+        }
+        previousComboMul = comboMultiplier;
     }
 }

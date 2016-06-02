@@ -11,7 +11,7 @@ namespace Assets.ScenesManagement
         public string name = "default";
         public float spawnInterval = 2f;
         public float fallVelocity = -2f;
-        public float bonusSpawnRatePercent = 5f;
+        public float bonusSpawnRatePercent = 2f;
         public int nbRecyclable = 2;
         public int maxMissed = 10;
     }

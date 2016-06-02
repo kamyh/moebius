@@ -11,11 +11,11 @@ namespace Assets.Scripts
         public static string[] Recyclables = { "Aluminium", "Pet", "Glass", "Paper", "Battery" };
         public static Dictionary<string, string> recyclableToThrash = new Dictionary<string, string>
         {
-            {"Aluminium", "AluThrash"},
-            {"Pet", "PetThrash"},
-            {"Glass", "GlassThrash"},
-            {"Paper", "PaperThrash"},
-            {"Battery", "BatteryThrash"}
+            {"Aluminium", "AluTrash"},
+            {"Pet", "PetTrash"},
+            {"Glass", "GlassTrash"},
+            {"Paper", "PaperTrash"},
+            {"Battery", "BatteryTrash"}
         };
         public static string Wall = "Wall";
     }

@@ -21,6 +21,7 @@ public class LevelSelectionNavigationManager : MonoBehaviour {
         LevelConfiguration config = new LevelConfiguration();
         config.spawnInterval = 3f;
         config.fallVelocity = -2f;
+        config.bonusSpawnRatePercent = 2f;
         loader.Load("MiniGame", config);
     }
 
@@ -31,6 +32,7 @@ public class LevelSelectionNavigationManager : MonoBehaviour {
         config.spawnInterval = 2f;
         config.fallVelocity = -3f;
         config.nbRecyclable = 3;
+        config.bonusSpawnRatePercent = 3f;
         loader.Load("MiniGame", config);
     }
 
@@ -41,6 +43,7 @@ public class LevelSelectionNavigationManager : MonoBehaviour {
         config.spawnInterval = 1f;
         config.fallVelocity = -4f;
         config.nbRecyclable = 4;
+        config.bonusSpawnRatePercent = 4f;
         loader.Load("MiniGame", config);
     }
 
