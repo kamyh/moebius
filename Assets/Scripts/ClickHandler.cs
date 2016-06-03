@@ -11,6 +11,8 @@ public class ClickHandler : MonoBehaviour {
     private Texture2D dragCursor;
     private Vector2 dragAndHoverOffset;
 
+    private bool mouseIsDown = false;
+
 	// Use this for initialization
 	void Start () {
         dragAndHoverOffset = new Vector2(13, 0);
@@ -31,15 +33,17 @@ public class ClickHandler : MonoBehaviour {
 
     void OnMouseDown()
     {
-        Cursor.SetCursor(dragCursor, dragAndHoverOffset, CursorMode.ForceSoftware);
-        GetComponent<AudioSource>().Play();
         SetAllCollidersStatus(false);
+        Cursor.SetCursor(dragCursor, dragAndHoverOffset, CursorMode.ForceSoftware);
+        mouseIsDown = true;
+        GetComponent<AudioSource>().Play();
     }
 
     void OnMouseUp()
     {
         Cursor.SetCursor(hoverCursor, dragAndHoverOffset, CursorMode.ForceSoftware);
-        SetAllCollidersStatus(true); 
+        SetAllCollidersStatus(true);
+        mouseIsDown = false;
     }
 
     void OnMouseDrag()
@@ -58,7 +62,8 @@ public class ClickHandler : MonoBehaviour {
 
     void OnMouseExit()
     {
-        Cursor.SetCursor(standardCursor, Vector2.zero, CursorMode.ForceSoftware);
+        if (!mouseIsDown)
+            Cursor.SetCursor(standardCursor, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     void OnDestroy()
