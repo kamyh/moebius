@@ -30,7 +30,12 @@ public class StartMenuNavigationManager : MonoBehaviour {
     public void LoadHelpScene()
     {
         SetGuiState(true);
-        loader.Load("Help");
+        loader.Load("HelpScene");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 
     private void SetGuiState(bool loading)

@@ -20,6 +20,7 @@ public class ScoreManager : MonoBehaviour {
     public Text scoreText;
     public Text missedText;
     public Text comboText;
+    public Text streakText;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class ScoreManager : MonoBehaviour {
 
         comboSound = gameObject.AddComponent<AudioSource>();
         comboSound.clip = Resources.Load("combo") as AudioClip;
+        comboSound.volume = 0.7f;
     }
 
 	// Use this for initialization
@@ -44,6 +46,7 @@ public class ScoreManager : MonoBehaviour {
         scoreText.text = "Score: " + score;
         missedText.text = "Missed: " + missed + "/" + Scenes.configs.maxMissed;
         comboText.text = "Combo: x " + comboMultiplier;
+        streakText.text = "Streak: " + nbConsecutives;
         MissedColorUpdate();
 	}
 
